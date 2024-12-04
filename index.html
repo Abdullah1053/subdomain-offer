@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Subdomain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <!-- <header class="bg-cyan-600 text-white py-4"> -->
+        <header class="relative flex flex-wrap items-center justify-between w-full bg-cyan-600 group py-7 shrink-0 px-7">
+            <div>
+                <img class="h-8" src="assets/logo.png">
+            </div>
+            <!-- <div class="items-center justify-between hidden gap-12 text-black md:flex">
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Product</a>
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Features</a>
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Pricing</a>
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Company</a>
+            </div> -->
+            <div class="items-center hidden gap-8 md:flex">
+                <button class="flex items-center text-sm font-normal text-white hover:text-gray-900 transition duration-300">Log In</button>
+                <button class="flex items-center px-4 py-2 text-sm font-bold rounded-   xl bg-purple-blue-100 text-white hover:bg-purple-blue-600 hover:text-white transition duration-300">
+                    Sign Up
+                </button>
+            </div>
+            <button onclick="(() => { this.closest('.group').classList.toggle('open')})()" class="flex md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 8H21C21.2652 8 21.5196 7.89464 21.7071 7.70711C21.8946 7.51957 22 7.26522 22 7C22 6.73478 21.8946 6.48043 21.7071 6.29289C21.5196 6.10536 21.2652 6 21 6H3C2.73478 6 2.48043 6.10536 2.29289 6.29289C2.10536 6.48043 2 6.73478 2 7C2 7.26522 2.10536 7.51957 2.29289 7.70711C2.48043 7.89464 2.73478 8 3 8ZM21 16H3C2.73478 16 2.48043 16.1054 2.29289 16.2929C2.10536 16.4804 2 16.7348 2 17C2 17.2652 2.10536 17.5196 2.29289 17.7071C2.48043 17.8946 2.73478 18 3 18H21C21.2652 18 21.5196 17.8946 21.7071 17.7071C21.8946 17.5196 22 17.2652 22 17C22 16.7348 21.8946 16.4804 21.7071 16.2929C21.5196 16.1054 21.2652 16 21 16ZM21 11H3C2.73478 11 2.48043 11.1054 2.29289 11.2929C2.10536 11.4804 2 11.7348 2 12C2 12.2652 2.10536 12.5196 2.29289 12.7071C2.48043 12.8946 2.73478 13 3 13H21C21.2652 13 21.5196 12.8946 21.7071 12.7071C21.8946 12.5196 22 12.2652 22 12C22 11.7348 21.8946 11.4804 21.7071 11.2929C21.5196 11.1054 21.2652 11 21 11Z" fill="black"></path>
+                </svg>
+            </button>
+            <div class="absolute flex md:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-4 px-4 rounded-2xl group-[.open]:max-h-64 top-full">
+                <!-- <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Product</a>
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Features</a>
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Pricing</a>
+                <a class="text-sm font-normal text-dark-grey-700 hover:text-dark-grey-900" href="javascript:void(0)">Company</a> -->
+                <button class="flex items-center text-sm font-normal text-black">Log In</button>
+                <button class="flex items-center px-4 py-2 text-sm font-bold rounded-xl bg-purple-blue-100 text-purple-blue-600 hover:bg-purple-blue-600 hover:text-white transition duration-300">Sign Up</button>
+            </div>
+        </header>
+    <!-- </header> -->
+
+    <!-- Main Content -->
+    <div class="min-h-screen flex flex-col items-center justify-center">
+        <!-- Hero Section -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800 md:text-5xl">Welcome to Your Subdomain!</h2>
+            <p class="mt-2 text-gray-600 text-lg">Register your subdomain now and start your journey with us.</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg max-w-4xl mx-auto">
+            <!-- Image Section -->
+            <div class="md:w-1/2">
+                <img src="assets/offer.png" alt="Landing Page Image" class="w-full h-auto rounded-t-lg md:rounded-tr-none md:rounded-l-lg">
+            </div>
+
+            <!-- Subdomain Display -->
+            <div class="md:w-1/2 p-8 text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Your Current Subdomain</h3>
+                <div class="text-gray-600 mb-6">
+                    <span id="subdomain" class="text-black-500  font-medium text-lg">Loading...</span>
+                </div>
+                <!-- <button
+                    onclick="redirectToRegistration()"
+                    class="bg-cyan-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-cyan-600 transition duration-300"
+                >
+                    Register Now
+                </button> -->
+                <button
+                
+                class="bg-cyan-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-cyan-600 transition duration-300"
+            >
+                Register Now
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-cyan-600 text-white py-4 mt-10">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Doing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Extract the subdomain from the current URL
+        const hostname = window.location.hostname; // e.g., "sub.example.com"
+        const domainParts = hostname.split('.'); // Split by dots
+        let subdomain = "";
+
+        // Check if it's a subdomain
+        if (domainParts.length > 2) {
+            subdomain = domainParts.slice(0, domainParts.length - 2).join('.');
+        } else {
+            subdomain = "No subdomain detected";
+        }
+
+        // Display the subdomain
+        document.getElementById('subdomain').textContent = subdomain;
+
+        // Redirect function
+        function redirectToRegistration() {
+            // Redirect the user to the registration page with the subdomain
+            if (subdomain !== "No subdomain detected") {
+                window.location.href = `/register?subdomain=${subdomain}`;
+            } else {
+                alert("No subdomain detected! Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

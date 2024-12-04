@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Subdomain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .subdomain-info {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Your Subdomain</h1>
+    <div class="subdomain-info">
+        Your current subdomain: <span id="subdomain">Loading...</span>
+    </div>
+    <form action="/register-subdomain" method="POST">
+        <input type="hidden" id="hiddenSubdomain" name="subdomain" value="">
+        <input type="text" name="email" placeholder="Enter your email" required>
+        <button type="submit">Register Now</button>
+    </form>
+
+    <script>
+        // Extract the subdomain from the current URL
+        const hostname = window.location.hostname; // e.g., "sub.example.com"
+        const domainParts = hostname.split('.'); // Split by dots
+        let subdomain = "";
+
+        // Check if it's a subdomain
+        if (domainParts.length > 2) {
+            subdomain = domainParts.slice(0, domainParts.length - 2).join('.');
+        } else {
+            subdomain = "No subdomain detected";
+        }
+
+        // Display the subdomain
+        document.getElementById('subdomain').textContent = subdomain;
+
+        // Populate the hidden input field
+        document.getElementById('hiddenSubdomain').value = subdomain;
+    </script>
+</body>
+</html>

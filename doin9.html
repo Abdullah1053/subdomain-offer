@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Subdomain</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        :root {
+            --bs-btn-color: #ffffff;
+            --bs-btn-bg: #008ECC;
+            --bs-btn-border-color: #008ECC;
+            --bs-btn-hover-color: #ffffff;
+            --bs-btn-hover-bg: #0079ad;
+            --bs-btn-hover-border-color: #0072a3;
+            --bs-btn-focus-shadow-rgb: 38, 159, 212;
+            --bs-btn-active-color: #ffffff;
+            --bs-btn-active-bg: #0072a3;
+            --bs-btn-active-border-color: #006b99;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #ffffff;
+            --bs-btn-disabled-bg: #008ECC;
+            --bs-btn-disabled-border-color: #008ECC;
+            --bs-body-font-family: Questv;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+
+        input,
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--bs-btn-bg);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--bs-btn-hover-bg);
+        }
+
+        .subdomain-info {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .auth-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            min-width: 100%;
+            min-height: 100vh;
+        }
+
+        [dir="rtl"] .auth-wrapper.auth-v3 .bg-auth-side {
+            left: 20px;
+            right: 50%;
+        }
+
+        .auth-wrapper.auth-v3 .bg-auth-side {
+            content: "";
+            top: 20px;
+            left: 50%;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 20px;
+            position: absolute;
+        }
+
+        .bg-primary {
+            background: linear-gradient(141.55deg, #008ECC 3.46%, #008ECC 99.86%), #008ECC !important;
+        }
+
+        .auth-wrapper .auth-content {
+            width: 75vw;
+            min-height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .auth-wrapper .auth-content {
+            position: relative;
+            padding: 15px;
+            z-index: 5;
+        }
+
+        .auth-wrapper .auth-content .card {
+            overflow: hidden;
+            padding: 0;
+            box-shadow: none;
+            background: transparent;
+            border: transparent;
+        }
+
+        .align-items-center {
+            align-items: center !important;
+        }
+
+        @media (min-width: 1200px) {
+            .col-xl-6 {
+                flex: 0 0 auto;
+                width: 50%;
+            }
+        }
+
+        .auth-wrapper .auth-content .img-card-side {
+            position: relative;
+            padding: 0;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .btn {
+            font-size: 14px;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem !important;
+        }
+
+        .card-body {
+            flex: 0 0 auto;
+            padding: 1rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-wrapper auth-v3">
+        <div class="bg-auth-side bg-primary"></div>
+        <div class="auth-content w-100">
+
+            <div class="card my-auto">
+                <div class="row align-items-center">
+                    <div class="card">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 d-flex">
+                                <div class="card-body mx-auto">
+                                    <div class="">
+                                        <h1>Register Your Subdomain</h1>
+                                        <div class="subdomain-info">
+                                            Your current subdomain: <span id="subdomain">Loading...</span>
+                                        </div>
+                                        <button type="btn btn-primary btn-submit btn-block mt-2">Register Now</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-6 img-card-side">
+                                <div dir="rtl">
+                                    <img src="https://doin9.com/assets/images/auth/forget-password.svg" alt=""
+                                        class="rounded mx-auto d-block">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 img-card-side">
+                    </div>
+                </div>
+            </div>
+            <div class="auth-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            © حقوق النشر
+                            Doing
+                            2024
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Extract the subdomain from the current URL
+        const hostname = window.location.hostname; // e.g., "sub.example.com"
+        const domainParts = hostname.split('.'); // Split by dots
+        let subdomain = "";
+
+        // Check if it's a subdomain
+        if (domainParts.length > 2) {
+            subdomain = domainParts.slice(0, domainParts.length - 2).join('.');
+        } else {
+            subdomain = "No subdomain detected";
+        }
+
+        // Display the subdomain
+        document.getElementById('subdomain').textContent = subdomain;
+
+        // Populate the hidden input field
+        document.getElementById('hiddenSubdomain').value = subdomain;
+    </script>
+</body>
+
+</html>
